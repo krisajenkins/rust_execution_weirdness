@@ -10,7 +10,9 @@ mod tests {
     fn dumb_test() -> VfsResult<()> {
         let root: VfsPath = MemoryFS::new().into();
         let path = root.join("somefile.txt")?;
-        if true {
+
+        // This test case passes. Remove these braces and it will fail!
+        {
             let mut file = path.create_file()?;
             file.write_all(b"Hello world\n")?;
         }
