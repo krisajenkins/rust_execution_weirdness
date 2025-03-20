@@ -15,6 +15,7 @@ mod tests {
         {
             let mut file = path.create_file()?;
             file.write_all(b"Hello world\n")?;
+            file.flush()?;
         }
 
         let mut buf = String::new();
